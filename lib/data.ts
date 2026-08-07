@@ -122,6 +122,91 @@ My technical background spans low-level network infrastructure, AAA authenticati
   ],
 };
 
+export interface StoryChapter {
+  id: string;
+  title: string;
+  subtitle: string;
+  iconName: string;
+  highlightBadge?: string;
+  keyQuote?: string;
+  content: string[];
+}
+
+export const myStoryChapters: StoryChapter[] = [
+  {
+    id: 'curiosity',
+    title: 'From Curiosity to Building Systems That Matter',
+    subtitle: 'Origins, Resilience & Education at USIU-Africa',
+    iconName: 'Compass',
+    highlightBadge: 'Burundi → Rwanda → Kenya',
+    keyQuote: 'When something does not work, I want to understand why, break the problem into smaller pieces, and keep working until I find a solution.',
+    content: [
+      'My journey into technology has never been only about learning how to write code. I have always been interested in understanding how systems work, what causes them to fail, and how technology can be used to solve problems that matter to people.',
+      'I am originally from Burundi, and my educational journey has taken me through Rwanda and eventually to Nairobi, Kenya, where I pursued a Bachelor of Science in Applied Computer Technology at the United States International University–Africa (USIU-Africa) as a Mastercard Foundation Scholar.',
+      'My path to university was not straightforward. Displacement interrupted my education and forced me to adapt to new environments, education systems, languages, and responsibilities. Those experiences shaped the way I approach technology today.',
+      'At USIU-Africa, that mindset gradually developed into an interest in both software engineering and computer networks. I did not want to choose between understanding the infrastructure that connects systems and building the applications that run on top of it. I wanted to understand both.',
+      'Over time, I became particularly interested in the intersection between network infrastructure, backend engineering, distributed systems, and intelligent software.',
+    ],
+  },
+  {
+    id: 'infrastructure',
+    title: 'From the Classroom to Real Infrastructure',
+    subtitle: 'Zestra Capital Internship & Building RadiusFlow',
+    iconName: 'Terminal',
+    highlightBadge: 'RADIUS • FastAPI • Linux',
+    keyQuote: 'Building a feature is different from building a system. A feature may work once. A system must remain understandable, secure, maintainable, observable, and reliable when different components interact.',
+    content: [
+      'My internship experience at Zestra Capital Limited gave me an opportunity to move beyond simulations and academic exercises into practical technology environments. I gained exposure to network infrastructure, Internet service delivery, troubleshooting, routers, access points, network authentication, and software development.',
+      'One question became particularly interesting to me: How can network access be centrally controlled, authenticated, monitored, and managed through software?',
+      'That question eventually became one of my most ambitious engineering projects: RadiusFlow—a management platform around FreeRADIUS with a FastAPI backend, React frontend, PostgreSQL database, and Linux infrastructure.',
+      'Working on RadiusFlow required thinking about system architecture, database design, API design, authentication policies, network devices, security, logging, monitoring, Linux services, failure recovery, and component communication.',
+    ],
+  },
+  {
+    id: 'ai-discovery',
+    title: 'Discovering Artificial Intelligence',
+    subtitle: 'Machine Learning, Recommendation Systems & AI Engineering',
+    iconName: 'Brain',
+    highlightBadge: 'AI Agents • RAG • PyTorch',
+    keyQuote: 'What happens when intelligent models become components inside the software systems we already build?',
+    content: [
+      'My studies also introduced me to machine learning and artificial intelligence. I began experimenting with classification, recommendation systems, data preprocessing, model evaluation, and computer vision. One project involved developing a machine-learning system for recommending undergraduate majors based on student characteristics and academic information.',
+      'AI introduced another question that now interests me deeply: What happens when intelligent models become components inside the software systems we already build?',
+      'Rather than viewing artificial intelligence as separate from software engineering, I am increasingly interested in AI Engineering—building applications in which machine learning models, large language models, APIs, databases, infrastructure, and user-facing applications work together as complete systems.',
+      'I am particularly interested in AI agents, machine learning systems, AI evaluation, retrieval-augmented generation, intelligent automation, and the infrastructure required to deploy AI reliably.',
+    ],
+  },
+  {
+    id: 'people-leadership',
+    title: 'Technology and People',
+    subtitle: 'Community Leadership & Mahama M-TEP Refugee Project',
+    iconName: 'Heart',
+    highlightBadge: '480+ Hours Training • Mahama Camp',
+    keyQuote: 'Leadership taught me that none of those technologies matter unless they ultimately solve meaningful problems for people.',
+    content: [
+      'Technology matters to me because ultimately systems are built for people. Through the Mastercard Foundation Scholars Program and community initiatives, I have worked with young people and communities affected by displacement and limited economic opportunities.',
+      'One of the projects I led was the Mahama Tailoring Empowerment Project (M-TEP) in Mahama Refugee Camp, Rwanda. With a budget of approximately USD 3,000, our team supported vocational and entrepreneurship training for young people while coordinating equipment procurement, trainers, beneficiaries, logistics, monitoring, and project implementation.',
+      'The program delivered more than 480 hours of vocational training.',
+      'That experience taught me lessons that programming alone could never teach me: leadership, accountability, communication, resource management, adaptability, and the responsibility that comes with building something other people depend on.',
+    ],
+  },
+  {
+    id: 'future-vision',
+    title: 'What I Am Building Toward',
+    subtitle: 'The Convergence of Networks, Backend & Artificial Intelligence',
+    iconName: 'Rocket',
+    highlightBadge: 'Systems + AI Future',
+    keyQuote: 'Networking taught me how machines communicate. Distributed systems taught me how services coordinate. Machine learning taught me how systems learn. Leadership taught me that technology must solve real problems.',
+    content: [
+      'Today, I describe myself as a Network Infrastructure Engineer | Full-Stack Software Developer while actively developing deeper expertise in Artificial Intelligence and Machine Learning.',
+      'These areas are not disconnected. Networking taught me how machines communicate. Distributed systems taught me how services coordinate. Backend engineering taught me how applications process information. Databases taught me how systems preserve information. Cybersecurity taught me to question trust. Machine learning taught me how systems can learn from information. And leadership taught me that none of those technologies matter unless they ultimately solve meaningful problems.',
+      'I am still learning. I am still building. And this portfolio documents that journey—not only the projects that worked, but the engineering decisions, experiments, failures, lessons, and improvements that helped me become a better problem solver.',
+      'My long-term goal is to build secure, intelligent, scalable technology that connects software, infrastructure, and artificial intelligence to solve real-world problems.',
+    ],
+  },
+];
+
+
 export const skillCategories: SkillCategory[] = [
   {
     category: 'Programming',
