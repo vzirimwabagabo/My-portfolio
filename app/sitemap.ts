@@ -1,15 +1,22 @@
 import { MetadataRoute } from 'next';
 
 function getBaseUrl(): string {
+  // 1. User-defined explicit site domain (recommended for production)
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
   }
+  // 2. Cloudflare Pages production deployment URL
+  if (process.env.CF_PAGES_URL) {
+    return process.env.CF_PAGES_URL.replace(/\/$/, '');
+  }
+  // 3. Vercel deployment URL (fallback if multi-cloud)
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`.replace(/\/$/, '');
   }
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`.replace(/\/$/, '');
   }
+  // 4. Default production domain fallback
   return 'https://valentinzirimwabagabo.com';
 }
 
