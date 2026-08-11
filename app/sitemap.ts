@@ -17,7 +17,7 @@ function getBaseUrl(): string {
     return `https://${process.env.VERCEL_URL}`.replace(/\/$/, '');
   }
   // 4. Default production domain fallback
-  return 'https://valentinzirimwabagabo.com';
+  return 'https://valentinz.me';
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
