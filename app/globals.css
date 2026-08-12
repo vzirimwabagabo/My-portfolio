@@ -13,6 +13,9 @@
     --accent-blue: #2563eb;
     --accent-cyan: #0284c7;
     --accent-indigo: #4f46e5;
+    --accent-emerald: #0f766e;
+    --accent-amber: #b45309;
+    --accent-rose: #be123c;
     --accent-glow: rgba(37, 99, 235, 0.08);
   }
 
@@ -28,6 +31,9 @@
     --accent-blue: #3b82f6;
     --accent-cyan: #06b6d4;
     --accent-indigo: #6366f1;
+    --accent-emerald: #10b981;
+    --accent-amber: #f59e0b;
+    --accent-rose: #fb7185;
     --accent-glow: rgba(59, 130, 246, 0.15);
   }
 }
@@ -151,6 +157,119 @@ html:not(.dark) {
 
   .text-slate-400 {
     color: #64748b !important;
+  }
+
+  .text-blue-300,
+  .text-blue-400 {
+    color: var(--accent-blue) !important;
+  }
+
+  .text-cyan-300,
+  .text-cyan-400 {
+    color: var(--accent-cyan) !important;
+  }
+
+  .text-emerald-300,
+  .text-emerald-400 {
+    color: var(--accent-emerald) !important;
+  }
+
+  .text-amber-300,
+  .text-amber-400 {
+    color: var(--accent-amber) !important;
+  }
+
+  .text-rose-300,
+  .text-rose-400 {
+    color: var(--accent-rose) !important;
+  }
+
+  .hover\:text-blue-300:hover,
+  .hover\:text-blue-400:hover {
+    color: var(--accent-blue) !important;
+  }
+
+  .hover\:text-cyan-300:hover,
+  .hover\:text-cyan-400:hover {
+    color: var(--accent-cyan) !important;
+  }
+
+  .hover\:text-emerald-300:hover,
+  .hover\:text-emerald-400:hover {
+    color: var(--accent-emerald) !important;
+  }
+
+  .hover\:text-amber-300:hover,
+  .hover\:text-amber-400:hover {
+    color: var(--accent-amber) !important;
+  }
+
+  .bg-blue-950,
+  .bg-blue-950\/90,
+  .bg-blue-950\/80,
+  .bg-blue-950\/60,
+  .bg-blue-950\/50,
+  .bg-blue-950\/40,
+  .bg-cyan-950,
+  .bg-cyan-950\/90,
+  .bg-cyan-950\/80,
+  .bg-cyan-950\/60,
+  .bg-cyan-950\/50,
+  .bg-cyan-950\/40,
+  .bg-emerald-950,
+  .bg-emerald-950\/90,
+  .bg-emerald-950\/80,
+  .bg-emerald-950\/60,
+  .bg-emerald-950\/50,
+  .bg-emerald-950\/40,
+  .bg-amber-950,
+  .bg-amber-950\/90,
+  .bg-amber-950\/80,
+  .bg-amber-950\/60,
+  .bg-amber-950\/50,
+  .bg-amber-950\/40,
+  .bg-rose-950,
+  .bg-rose-950\/90,
+  .bg-rose-950\/80,
+  .bg-rose-950\/60,
+  .bg-rose-950\/50,
+  .bg-rose-950\/40,
+  .bg-indigo-950,
+  .bg-indigo-950\/90,
+  .bg-indigo-950\/80,
+  .bg-indigo-950\/60,
+  .bg-indigo-950\/50,
+  .bg-indigo-950\/40 {
+    background-color: #ffffff !important;
+  }
+
+  .border-blue-800,
+  .border-blue-800\/80,
+  .border-blue-800\/60,
+  .border-blue-700,
+  .border-blue-700\/60,
+  .border-cyan-800,
+  .border-cyan-800\/80,
+  .border-cyan-800\/60,
+  .border-cyan-700,
+  .border-cyan-700\/60,
+  .border-emerald-800,
+  .border-emerald-800\/80,
+  .border-emerald-800\/60,
+  .border-emerald-700,
+  .border-emerald-700\/60,
+  .border-amber-800,
+  .border-amber-800\/80,
+  .border-amber-800\/60,
+  .border-amber-700,
+  .border-amber-700\/60,
+  .border-rose-800,
+  .border-rose-800\/80,
+  .border-rose-800\/60,
+  .border-indigo-800,
+  .border-indigo-800\/80,
+  .border-indigo-800\/60 {
+    border-color: #e2e8f0 !important;
   }
 
   .border-slate-800,

@@ -105,11 +105,11 @@ My technical background spans low-level network infrastructure, AAA authenticati
   scholarship: 'Mastercard Foundation Scholar',
   location: 'Nairobi, Kenya',
   origin: 'Burundi',
-  email: 'valentin.zirimwa@gmail.com',
+  email: 'vzirimwabagabo0@gmail.com',
   phone: '+250786216601',
   phoneDisplay: '+250 786 216 601',
-  github: 'https://github.com/valentinzirimwabagabo',
-  linkedin: 'https://linkedin.com/in/valentinzirimwabagabo',
+  github: 'https://github.com/vzirimwabagabo',
+  linkedin: 'https://www.linkedin.com/in/valentin-zirimwabagabo/',
   resumeUrl: '/resume',
   targetRoles: [
     'AI Engineer',
@@ -303,7 +303,7 @@ export const projects: Project[] = [
     featured: true,
     slug: 'radiusflow',
     tags: ['FreeRADIUS', 'FastAPI', 'Next.js', 'PostgreSQL', 'Docker', 'Network Security', '802.1X'],
-    githubUrl: 'https://github.com/valentinzirimwabagabo/radiusflow',
+    githubUrl: 'https://github.com/vzirimwabagabo/radiusflow',
     liveUrl: '/projects/radiusflow',
     hasSpecialPage: true,
     specialPagePath: '/projects/radiusflow',
@@ -346,7 +346,7 @@ export const projects: Project[] = [
     featured: true,
     slug: 'undergraduate-major-recommendation-system',
     tags: ['Python', 'Scikit-Learn', 'FastAPI', 'Pandas', 'React', 'Machine Learning'],
-    githubUrl: 'https://github.com/valentinzirimwabagabo/major-recommendation-system',
+    githubUrl: 'https://github.com/vzirimwabagabo/major-recommendation-system',
     caseStudy: {
       overview: 'Developed as part of my undergraduate engineering capstone at USIU-Africa, this system evaluates high school academic performance, personal technical interests, and standardized skill metrics to generate probabilistic academic major matches.',
       problem: 'Undergraduate students often select majors based on incomplete information or peer influence, resulting in high course drop rates and delayed graduation trajectories.',
@@ -382,7 +382,7 @@ export const projects: Project[] = [
     featured: true,
     slug: 'distributed-network-node-cluster',
     tags: ['Python', 'Asyncio', 'Sockets', 'Docker', 'Systems Architecture', 'TCP/IP'],
-    githubUrl: 'https://github.com/valentinzirimwabagabo/distributed-node-cluster',
+    githubUrl: 'https://github.com/vzirimwabagabo/distributed-node-cluster',
     caseStudy: {
       overview: 'Designed to simulate resilient network edge monitoring, this system maintains active node consensus across a clustered network, automatically electing a new master node if a network partition occurs.',
       problem: 'Centralized network monitoring systems suffer from single-point-of-failure vulnerabilities when monitoring remote edge infrastructure.',
@@ -417,7 +417,7 @@ export const projects: Project[] = [
     featured: false,
     slug: 'android-secure-access-app',
     tags: ['Java', 'Android SDK', 'REST APIs', 'Biometrics', 'Network Security'],
-    githubUrl: 'https://github.com/valentinzirimwabagabo/android-secure-access',
+    githubUrl: 'https://github.com/vzirimwabagabo/android-secure-access',
     caseStudy: {
       overview: 'Created to enable secure, on-the-go server management and network alert monitoring for IT infrastructure administrators.',
       problem: 'System administrators frequently lack mobile access to high-priority infrastructure alerts requiring immediate authentication and remediation.',
@@ -452,7 +452,7 @@ export const projects: Project[] = [
     featured: true,
     slug: 'agentic-rag-engine',
     tags: ['Python', 'LangChain', 'PyTorch', 'LLMs', 'Vector Search', 'RAG', 'AI Evaluation'],
-    githubUrl: 'https://github.com/valentinzirimwabagabo/agentic-rag-evaluator',
+    githubUrl: 'https://github.com/vzirimwabagabo/agentic-rag-evaluator',
     liveUrl: '/ai-lab',
     hasSpecialPage: true,
     specialPagePath: '/ai-lab',
@@ -753,7 +753,7 @@ As AI transitions from simple chat interfaces to autonomous system agents, quant
 ];
 
 export const githubStats = {
-  username: 'valentinzirimwabagabo',
+  username: 'vzirimwabagabo',
   totalRepos: 18,
   totalStars: 42,
   contributionsThisYear: 480,

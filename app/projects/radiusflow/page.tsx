@@ -52,7 +52,7 @@ export default function RadiusFlowProductPage() {
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <a
-              href="https://github.com/valentinzirimwabagabo/radiusflow"
+              href="https://github.com/vzirimwabagabo/radiusflow"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-600/30 flex items-center gap-2"
@@ -257,7 +257,7 @@ CREATE TABLE radreply (
 
             <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 font-mono text-xs text-slate-300">
               <p className="text-slate-400"># Clone & start RadiusFlow stack</p>
-              <p className="text-cyan-300">git clone https://github.com/valentinzirimwabagabo/radiusflow.git</p>
+              <p className="text-cyan-300">git clone https://github.com/vzirimwabagabo/radiusflow.git</p>
               <p className="text-cyan-300">cd radiusflow</p>
               <p className="text-cyan-300">docker-compose up -d --build</p>
             </div>

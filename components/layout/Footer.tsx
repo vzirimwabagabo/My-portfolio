@@ -38,8 +38,8 @@ export function Footer() {
               AI Engineer (Aspiring) | Network Infrastructure Engineer | Full-Stack Software Developer.
               BS in Applied Computer Technology graduate from USIU-Africa. Mastercard Foundation Scholar.
             </p>
-            <div className="flex items-center gap-2 text-xs text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <div className="flex items-center gap-2 text-xs text-[color:var(--text-muted)]">
+              <ShieldCheck className="w-4 h-4 text-[color:var(--accent-cyan)]" />
               <span>Architected with Next.js App Router, TypeScript & Tailwind CSS</span>
             </div>
           </div>
