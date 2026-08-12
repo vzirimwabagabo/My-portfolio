@@ -1,8 +1,9 @@
 'use client';
 
 import * as React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Mail, Sparkles, Terminal, Shield, Network, Cpu, Code2 } from 'lucide-react';
+import { ArrowRight, Download, Mail, Sparkles, Terminal, Shield, Network, Cpu } from 'lucide-react';
 import { personalInfo } from '@/lib/data';
 
 export function HeroSection() {
@@ -23,20 +24,20 @@ export function HeroSection() {
             className="lg:col-span-7 space-y-6 text-left"
           >
             {/* Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-950/40 border border-blue-800/50 backdrop-blur-md text-xs text-blue-300 font-medium shadow-inner">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[color:var(--bg-card)]/85 border border-[color:var(--border-color)] backdrop-blur-md text-xs text-[color:var(--text-secondary)] font-medium shadow-inner">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
               <span>Available for AI & Systems Engineering Roles</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-100 leading-[1.15]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[color:var(--text-primary)] leading-[1.15]">
               I design <span className="gradient-text-blue">intelligent software systems</span> that bridge AI, networking, and backend engineering.
             </h1>
 
             {/* Short Introduction */}
-            <p className="text-base sm:text-lg text-slate-300 max-w-2xl font-normal leading-relaxed">
+            <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl font-normal leading-relaxed">
               {personalInfo.shortBio}{' '}
-              <span className="text-slate-400">
+              <span className="text-[color:var(--text-muted)]">
                 Applied Computer Technology graduate from USIU-Africa & Mastercard Foundation Scholar. Building secure, resilient real-world systems.
               </span>
             </p>
@@ -71,16 +72,16 @@ export function HeroSection() {
             </div>
 
             {/* Quick Tech Badge Bar */}
-            <div className="pt-6 border-t border-slate-800/80">
-              <span className="text-xs uppercase font-semibold text-slate-400 tracking-wider block mb-3">
+            <div className="pt-6 border-t border-[color:var(--border-color)]">
+              <span className="text-xs uppercase font-semibold text-[color:var(--text-muted)] tracking-wider block mb-3">
                 Core Engineering Stack
               </span>
-              <div className="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+              <div className="flex flex-wrap gap-2 text-xs font-mono text-[color:var(--text-secondary)]">
                 {['Python', 'FastAPI', 'FreeRADIUS', 'TypeScript', 'Next.js', 'PyTorch', 'Docker', 'PostgreSQL'].map(
                   (tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded-md bg-slate-900/90 border border-slate-800 text-slate-300 hover:border-cyan-500/50 hover:text-cyan-300 transition-all duration-150"
+                      className="px-2.5 py-1 rounded-md bg-[color:var(--bg-card)] border border-[color:var(--border-color)] text-[color:var(--text-secondary)] hover:border-cyan-500/50 hover:text-cyan-300 transition-all duration-150"
                     >
                       {tech}
                     </span>
@@ -95,7 +96,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 relative flex justify-center"
+            className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-md">
               {/* Outer decorative ring */}
@@ -104,57 +105,64 @@ export function HeroSection() {
               <div className="relative glass-panel rounded-2xl p-6 space-y-6 text-left">
                 {/* Profile Header Block */}
                 <div className="flex items-center gap-4">
-                  {/* Photo / Avatar Placeholder */}
-                  <div className="relative w-20 h-20 rounded-2xl bg-slate-900 border border-slate-700/80 flex items-center justify-center overflow-hidden shadow-inner group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-cyan-500/20 opacity-60" />
-                    <span className="text-2xl font-bold font-mono text-cyan-400">VZ</span>
+                  {/* Photo / Avatar */}
+                  <div className="relative w-24 h-24 shrink-0 rounded-[1.5rem] overflow-hidden border border-[color:var(--border-color)] bg-[color:var(--bg-card)] shadow-lg shadow-black/10">
+                    <Image
+                      src="/image.png"
+                      alt="Portrait of Valentin Zirimwabagabo"
+                      fill
+                      priority
+                      sizes="96px"
+                      className="object-cover object-[50%_20%]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-white/10" />
                   </div>
 
-                  <div>
-                    <h2 className="text-lg font-bold text-slate-100">{personalInfo.name}</h2>
+                  <div className="min-w-0">
+                    <h2 className="text-lg font-bold text-[color:var(--text-primary)]">{personalInfo.name}</h2>
                     <p className="text-xs text-cyan-400 font-medium">{personalInfo.status}</p>
-                    <p className="text-xs text-slate-400 mt-1">Nairobi, Kenya • From Burundi</p>
+                    <p className="text-xs text-[color:var(--text-muted)] mt-1">Nairobi, Kenya • From Burundi</p>
                   </div>
                 </div>
 
                 {/* Key Metrics / Highlights Grid */}
                 <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div className="p-3 rounded-xl bg-[color:var(--bg-card)] border border-[color:var(--border-color)]">
                     <div className="flex items-center gap-2 text-cyan-400 mb-1">
                       <Terminal className="w-4 h-4" />
                       <span className="text-xs font-semibold">Systems</span>
                     </div>
-                    <p className="text-xs text-slate-300">FreeRADIUS AAA & Asynchronous Microservices</p>
+                    <p className="text-xs text-[color:var(--text-secondary)]">FreeRADIUS AAA & Asynchronous Microservices</p>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div className="p-3 rounded-xl bg-[color:var(--bg-card)] border border-[color:var(--border-color)]">
                     <div className="flex items-center gap-2 text-blue-400 mb-1">
                       <Cpu className="w-4 h-4" />
                       <span className="text-xs font-semibold">AI & ML</span>
                     </div>
-                    <p className="text-xs text-slate-300">Recommendation Systems & Agentic RAG</p>
+                    <p className="text-xs text-[color:var(--text-secondary)]">Recommendation Systems & Agentic RAG</p>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div className="p-3 rounded-xl bg-[color:var(--bg-card)] border border-[color:var(--border-color)]">
                     <div className="flex items-center gap-2 text-indigo-400 mb-1">
                       <Network className="w-4 h-4" />
                       <span className="text-xs font-semibold">Networking</span>
                     </div>
-                    <p className="text-xs text-slate-300">TCP/IP, 802.1X Access Control, Routing</p>
+                    <p className="text-xs text-[color:var(--text-secondary)]">TCP/IP, 802.1X Access Control, Routing</p>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                  <div className="p-3 rounded-xl bg-[color:var(--bg-card)] border border-[color:var(--border-color)]">
                     <div className="flex items-center gap-2 text-emerald-400 mb-1">
                       <Shield className="w-4 h-4" />
                       <span className="text-xs font-semibold">Scholarship</span>
                     </div>
-                    <p className="text-xs text-slate-300">Mastercard Foundation Scholar</p>
+                    <p className="text-xs text-[color:var(--text-secondary)]">Mastercard Foundation Scholar</p>
                   </div>
                 </div>
 
                 {/* Quick Link Card for RadiusFlow & AI Lab */}
-                <div className="p-4 rounded-xl bg-blue-950/30 border border-blue-800/40 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2 text-slate-200">
+                <div className="p-4 rounded-xl bg-[color:var(--bg-card)] border border-[color:var(--border-color)] flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-2 text-[color:var(--text-primary)]">
                     <Sparkles className="w-4 h-4 text-cyan-400 animate-spin" style={{ animationDuration: '6s' }} />
                     <span className="font-medium">Explore Interactive Demos</span>
                   </div>
