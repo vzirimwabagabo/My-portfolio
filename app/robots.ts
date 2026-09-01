@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+const SITE_URL = 'https://valentinzirimwabagabo.valentinz.me';
+
 function getBaseUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
     return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '');
@@ -13,18 +15,21 @@ function getBaseUrl(): string {
   if (process.env.VERCEL_URL) {
     return `https://${process.env.VERCEL_URL}`.replace(/\/$/, '');
   }
-  return 'https://valentinz.me';
+  return SITE_URL;
 }
 
 export default function robots(): MetadataRoute.Robots {
   const baseUrl = getBaseUrl();
 
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/api/'],
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/'],
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   };
 }
