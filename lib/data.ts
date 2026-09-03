@@ -9,6 +9,7 @@ export interface Project {
   slug: string;
   tags: string[];
   githubUrl?: string;
+  githubLabel?: string;
   liveUrl?: string;
   hasSpecialPage?: boolean;
   specialPagePath?: string;
@@ -269,6 +270,46 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 'zestra-delivery-dashboard',
+    title: 'Zestra Delivery Administration Dashboard',
+    subtitle: 'Operations & Fleet Logistics Admin Platform',
+    description: 'A React-based administration dashboard engineered during my internship at Zestra Capital Limited, integrated with the delivery backend to manage orders, deliveries, riders, agents, and access control.',
+    category: 'Full-Stack',
+    featured: true,
+    slug: 'zestra-delivery-dashboard',
+    tags: ['React', 'JavaScript', 'React Router', 'Context API', 'REST APIs', 'RBAC', 'Authentication', 'Google Maps'],
+    githubUrl: 'https://github.com/josephpetersw/zestra-delivery-backend',
+    githubLabel: 'Associated Backend Repo',
+    caseStudy: {
+      overview: 'Contributed to the frontend engineering of the Zestra Delivery Administration Dashboard during my internship at Zestra Capital Limited. Built with React, JavaScript, React Router, and Context API, the platform serves as an operational control hub for managing Agents, Orders, Deliveries, Users, Riders, Rider Activity Logs, and Admin Profiles—integrated with the existing delivery REST backend.',
+      problem: 'Operations and dispatch teams needed a centralized, responsive interface to supervise multi-stage delivery workflows, assign dispatch riders, audit delivery history, and manage administrator access securely without exposing raw database tables or backend endpoints.',
+      challenges: [
+        'Implementing client-side authentication with protected route guards and granular Role-Based Access Control (RBAC) across administrative tiers.',
+        'Integrating diverse REST API endpoints for Orders, Deliveries, Riders, and Agents with robust handling for pagination, multi-parameter search, and status filtering.',
+        'Enforcing rigorous form and input validation alongside responsive loading skeletons and defensive error recovery states.',
+        'Dynamically transforming delivery latitude/longitude coordinates into direct Google Maps navigation links for rapid geographical dispatch verification.',
+      ],
+      architecture: 'Single Page Application (SPA) architecture utilizing React Router for protected route enforcement, Context API for global session and authentication state, modular service layers for REST API consumption, and reusable data table/filter UI components.',
+      technologies: ['React', 'JavaScript (ES6+)', 'React Router', 'Context API', 'REST APIs', 'JWT & RBAC', 'Google Maps Links', 'Git'],
+      engineeringDecisions: [
+        'Modularized key operational domains (Agents, Orders, Deliveries, Users, Riders, Rider Logs, Admin Profile) into independent view modules to ensure code maintainability.',
+        'Established dedicated API service abstractions interfacing with the existing delivery backend (josephpetersw/zestra-delivery-backend), keeping components decoupled from network logic.',
+        'Built centralized pagination and filtering handlers to manage large order volumes without UI degradation.',
+        'Constructed coordinate utility helpers converting raw delivery point coordinates into instant Google Maps routing links.',
+      ],
+      results: [
+        'Centralized the supervision of active deliveries, rider assignments, and order states into a single operational interface.',
+        'Prevented unauthorized access to privileged administrator functions through strict RBAC route barriers and session checks.',
+        'Seamlessly integrated the React frontend with the existing Zestra delivery backend, establishing reliable end-to-end operational workflows.',
+      ],
+      lessonsLearned: [
+        'Working on a frontend client integrated with an established backend emphasized the critical necessity of strict API payload contracts, graceful error boundaries, and comprehensive loading feedback for operators.',
+        'Designing internal admin tooling requires prioritizing UX predictability, fast search/filtering, and reliable coordinate-level spatial context.',
+      ],
+      futureImprovements: ['Implementing real-time WebSocket notifications for instant rider status updates and live delivery tracking maps.'],
+    },
+  },
+  {
     id: 'talenthub',
     title: 'TalentHub / RefuTalent',
     subtitle: 'Connecting Displaced Talent with Opportunities',
@@ -415,9 +456,10 @@ export const timelineItems: TimelineItem[] = [
     achievements: [
       'Configured and maintained network infrastructure to ensure reliable internet service delivery.',
       'Diagnosed routing and connectivity issues utilizing network troubleshooting protocols.',
+      'Contributed to the React-based Zestra Delivery Administration Dashboard, engineering core operational views (Orders, Deliveries, Riders, Agents, RBAC) integrated with the delivery REST backend.',
       'Contributed to web application and software development initiatives to support internal operations.'
     ],
-    skills: ['Network Infrastructure', 'Troubleshooting', 'Software Development', 'Operations'],
+    skills: ['React', 'JavaScript', 'REST APIs', 'RBAC', 'Network Infrastructure', 'Troubleshooting'],
   },
   {
     id: 'leadership-mtep',

@@ -22,7 +22,7 @@ export function FeaturedProjectsSection() {
   const [selectedCategory, setSelectedCategory] = React.useState<string>('All');
   const [activeModalProject, setActiveModalProject] = React.useState<Project | null>(null);
 
-  const categories = ['All', 'Networking', 'AI & ML', 'Backend & Systems', 'Mobile'];
+  const categories = ['All', 'Full-Stack', 'Networking', 'AI & ML', 'Backend & Systems'];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects
@@ -134,7 +134,7 @@ export function FeaturedProjectsSection() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-colors"
-                      title="View GitHub Source Code"
+                      title={project.githubLabel || "View GitHub Source Code"}
                     >
                       <GithubIcon className="w-4 h-4" />
                     </a>
@@ -320,7 +320,7 @@ export function FeaturedProjectsSection() {
                     className="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl flex items-center gap-2"
                   >
                     <GithubIcon className="w-4 h-4" />
-                    <span>View Repository</span>
+                    <span>{activeModalProject.githubLabel || 'View Repository'}</span>
                   </a>
                 )}
               </div>
