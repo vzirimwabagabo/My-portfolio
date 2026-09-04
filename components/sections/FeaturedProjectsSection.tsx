@@ -22,7 +22,7 @@ export function FeaturedProjectsSection() {
   const [selectedCategory, setSelectedCategory] = React.useState<string>('All');
   const [activeModalProject, setActiveModalProject] = React.useState<Project | null>(null);
 
-  const categories = ['All', 'Full-Stack', 'Networking', 'AI & ML', 'Backend & Systems'];
+  const categories = ['All', 'Full-Stack', 'Networking', 'AI & ML', 'Backend & Systems', 'Mobile'];
 
   const filteredProjects = selectedCategory === 'All'
     ? projects

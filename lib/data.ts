@@ -242,32 +242,74 @@ export const projects: Project[] = [
   {
     id: 'radiusflow',
     title: 'RadiusFlow',
-    subtitle: 'FreeRADIUS Management Platform',
-    description: 'A decoupled management platform and dashboard for FreeRADIUS network architecture that separates the AAA data plane from the management plane.',
+    subtitle: 'FreeRADIUS Network Access Management Platform',
+    description: 'A decoupled management platform and dashboard for FreeRADIUS network architecture that separates the high-throughput AAA data plane from the management plane.',
     category: 'Networking',
     featured: true,
     slug: 'radiusflow',
-    tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'FreeRADIUS', 'MikroTik'],
+    tags: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'FreeRADIUS', 'MikroTik', '802.1X'],
+    githubUrl: 'https://github.com/vzirimwabagabo/RadiusFlow',
+    githubLabel: 'Source Code',
+    hasSpecialPage: true,
+    specialPagePath: '/projects/radiusflow',
     caseStudy: {
-      overview: 'Engineered a decoupled architecture where FreeRADIUS handles live AAA traffic efficiently, while a dedicated management application handles logic, provisioning, and reporting.',
-      problem: 'Traditional FreeRADIUS setups intermingle the AAA data plane with management logic, making it difficult to scale, monitor, and securely administer network access.',
+      overview: 'Engineered a decoupled network access management platform where FreeRADIUS handles live authentication/accounting traffic against PostgreSQL, while an asynchronous FastAPI application handles administrative provisioning, session teardown, and monitoring.',
+      problem: 'Traditional FreeRADIUS installations intermingle the AAA data plane with web management logic, causing database lock contention, slow administrative responses, and difficult subscriber session monitoring.',
       challenges: [
-        'Synchronizing state between the PostgreSQL management database and the live FreeRADIUS service without introducing latency into the authentication flow.',
-        'Implementing granular Role-Based Access Control (RBAC) for administrators.',
+        'Synchronizing state between the PostgreSQL management database and the live FreeRADIUS service without introducing latency into active authentication requests.',
+        'Triggering real-time session disconnection requests (RADIUS CoA / PoD) over UDP sockets to Network Access Servers (NAS) like MikroTik.',
+        'Implementing granular Role-Based Access Control (RBAC) for network administrators.',
       ],
-      architecture: 'FastAPI backend interfaces with PostgreSQL and FreeRADIUS, providing secure APIs to a React-based administrative dashboard.',
-      technologies: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'FreeRADIUS', 'RADIUS AAA', 'MikroTik'],
+      architecture: 'Three-tier architecture: FreeRADIUS C engine processing EAP-TTLS/PAP/CHAP, FastAPI asynchronous microservice layer, and React/Next.js administrative dashboard.',
+      technologies: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'FreeRADIUS', 'RADIUS AAA', 'MikroTik RouterOS'],
       engineeringDecisions: [
-        'Decoupled the management logic from the AAA processing plane to ensure authentication performance is unaffected by administrative dashboard queries.'
+        'Decoupled administrative query logic from the raw radcheck and radreply tables to ensure peak authentication throughput is unaffected by UI reports.',
+        'Engineered async UDP packet routines for instant Disconnect-Request (CoA) delivery to gateway routers.'
       ],
       results: [
-        'Created a scalable blueprint for ISP/enterprise network access management that separates concerns and improves auditability.'
+        'Created a reliable blueprint for ISP and campus network access management that separates concerns and improves security auditability.',
+        'Enabled sub-second administrative session diagnostics without locking production accounting tables.'
       ],
       lessonsLearned: [
-        'Separating state between high-frequency operational systems and administrative systems is crucial for stability.'
+        'Separating state between high-frequency operational protocol handlers and administrative control planes is crucial for network stability.'
       ],
-      futureImprovements: ['Adding deeper AI-driven anomaly detection for network access logs.'],
+      futureImprovements: ['Adding deeper AI-driven anomaly detection for authentication log spikes and brute-force detection.'],
     },
+  },
+  {
+    id: 'major-recommender-system',
+    title: 'Undergraduate Major Recommender System',
+    subtitle: 'Machine Learning Academic Advising & Skill Alignment Engine',
+    description: 'An applied machine learning system that analyzes student academic profiles, subject competencies, and career interests to generate tailored university degree major recommendations.',
+    category: 'AI & ML',
+    featured: true,
+    slug: 'major-recommender-system',
+    tags: ['Python', 'scikit-learn', 'Decision Trees', 'Random Forest', 'FastAPI', 'Pandas', 'React'],
+    githubUrl: 'https://github.com/vzirimwabagabo/Major_advisor',
+    githubLabel: 'Source Code',
+    caseStudy: {
+      overview: 'Engineered an intelligent academic advising platform developed as a capstone project at USIU-Africa. The system utilizes supervised machine learning models to map student academic histories, subject proficiencies, and career goals to optimal undergraduate programs.',
+      problem: 'Secondary school graduates and early university students frequently struggle with choosing degree programs aligned with their demonstrable academic strengths, leading to high course dropout rates and career misalignment.',
+      challenges: [
+        'Preprocessing multi-attribute student evaluation metrics, normalizing disparate grading scales, and encoding categorical interest surveys.',
+        'Comparing classification models (Decision Trees, Random Forests, Multi-layer Perceptrons) to identify the highest predictive accuracy while avoiding overfitting on limited sample distributions.',
+        'Constructing an intuitive interface for students to input their academic metrics and receive transparent, explainable recommendations.'
+      ],
+      architecture: 'Python scikit-learn training pipeline exported to model artifacts, served via a FastAPI REST service to an interactive web frontend.',
+      technologies: ['Python', 'scikit-learn', 'Random Forest', 'Decision Trees', 'Pandas', 'FastAPI', 'React'],
+      engineeringDecisions: [
+        'Adopted Random Forest classification to effectively handle non-linear feature interactions between high school subject scores and university departmental requirements.',
+        'Engineered feature importance metrics to explain why specific majors were recommended to students, building trust in the advising engine.'
+      ],
+      results: [
+        'Achieved high recommendation accuracy across diverse candidate profiles with clear feature importance rankings.',
+        'Demonstrated the practical utility of applied machine learning in higher-education academic guidance.'
+      ],
+      lessonsLearned: [
+        'In academic advising, model interpretability and explainability are just as critical as raw classification accuracy.'
+      ],
+      futureImprovements: ['Integrating natural language processing (NLP) to parse student personal statements and open-ended career aspiration essays.']
+    }
   },
   {
     id: 'zestra-delivery-dashboard',
@@ -313,13 +355,15 @@ export const projects: Project[] = [
     id: 'talenthub',
     title: 'TalentHub / RefuTalent',
     subtitle: 'Connecting Displaced Talent with Opportunities',
-    description: 'A full-stack digital platform designed to help refugees showcase their talents and connect with professional opportunities and supporters.',
+    description: 'A full-stack digital platform designed to help refugees showcase their talents and connect with professional opportunities, sponsors, and employers.',
     category: 'Full-Stack',
     featured: true,
     slug: 'talenthub',
-    tags: ['React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    tags: ['React', 'Next.js', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Tailwind CSS'],
+    githubUrl: 'https://github.com/vzirimwabagabo/talent-hub-ui',
+    githubLabel: 'Frontend Repo (UI)',
     caseStudy: {
-      overview: 'A scalable web application featuring authenticated profiles, opportunity matching algorithms, and integrated messaging designed for social impact.',
+      overview: 'A scalable web application featuring authenticated profiles, opportunity matching algorithms, and integrated messaging designed for social impact. Interfaces with a dedicated Node.js/Express REST backend (https://github.com/vzirimwabagabo/talent-hub-api).',
       problem: 'Refugees often possess strong professional skills but lack verifiable platforms to showcase their portfolios to global opportunities and sponsors.',
       challenges: [
         'Designing a flexible MongoDB schema to accommodate highly varied professional backgrounds.',
@@ -342,12 +386,12 @@ export const projects: Project[] = [
   {
     id: 'ml-face-recognition',
     title: 'Machine Learning Face Recognition',
-    subtitle: 'Computer Vision Classification Pipeline',
-    description: 'A machine learning pipeline that standardizes image data, reduces dimensionality, and classifies identities using a tuned nearest-neighbors approach.',
+    subtitle: 'Computer Vision Dimensionality Reduction & Classification',
+    description: 'A machine learning pipeline that standardizes image data, reduces dimensionality using Principal Component Analysis, and classifies identities using a tuned K-Nearest Neighbors approach.',
     category: 'AI & ML',
     featured: true,
     slug: 'ml-face-recognition',
-    tags: ['Python', 'scikit-learn', 'StandardScaler', 'PCA', 'KNN'],
+    tags: ['Python', 'scikit-learn', 'StandardScaler', 'PCA', 'KNN', 'Computer Vision'],
     caseStudy: {
       overview: 'A computer vision machine learning pipeline focused on efficient dimensionality reduction and identity classification.',
       problem: 'Identifying individuals from image data requires dimensionality reduction to process efficiently while maintaining high classification accuracy.',
@@ -371,33 +415,194 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 'hotel-management-system',
+    title: 'Grand Hotel Management System',
+    subtitle: 'Role-Based Multi-Page Operations & Booking Platform',
+    description: 'A full-stack Multi-Page Application (MPA) managing hotel operations with distinct roles for receptionists and housekeeping staff, featuring real-time room occupancy, cleaning tasks, and session authentication.',
+    category: 'Full-Stack',
+    featured: false,
+    slug: 'hotel-management-system',
+    tags: ['Node.js', 'Express', 'EJS', 'Bootstrap', 'RBAC', 'Session Auth', 'JavaScript'],
+    githubUrl: 'https://github.com/vzirimwabagabo/Hotel_Manager',
+    githubLabel: 'Source Code',
+    caseStudy: {
+      overview: 'Developed a complete hotel management application using Node.js, Express, EJS server-rendered templates, and Bootstrap 5.3. Implements dedicated workflows for receptionists (guest check-in/out, room filtering, cleaning requests) and housekeeping staff (task assignment, priority tracking, room status updates).',
+      problem: 'Hospitality businesses require clear separation of duties between front-desk guest intake and back-of-house housekeeping without complex external service dependencies.',
+      challenges: [
+        'Implementing secure session-based authentication and role-based access control with custom middleware preventing unauthorized route traversal.',
+        'Designing a multi-parameter filtering engine for room status, floor, and occupancy combined with live search.',
+        'Managing automated task creation when guests check out, transitioning room states to pending cleaning.'
+      ],
+      architecture: 'Server-Side Rendered (SSR) MVC architecture with Express routing, express-session authentication, JSON data management layers, and modular EJS component templates.',
+      technologies: ['Node.js', 'Express.js', 'EJS', 'Bootstrap 5.3', 'express-session', 'JavaScript'],
+      engineeringDecisions: [
+        'Engineered custom authentication middleware verifying session validity and role permissions on every protected endpoint.',
+        'Structured a three-tier task priority system (High, Medium, Low) ensuring critical room turnovers are expedited.'
+      ],
+      results: [
+        'Delivered an intuitive operational dashboard with color-coded analytics and instant status updates.',
+        'Successfully enforced role isolation between front-desk and maintenance workflows.'
+      ],
+      lessonsLearned: [
+        'Server-side rendering with EJS offers rapid development and lightweight execution for internal enterprise applications.'
+      ],
+      futureImprovements: ['Migrating the data store to PostgreSQL with Prisma ORM for relational constraints.']
+    }
+  },
+  {
+    id: 'bus-booking-platform',
+    title: 'Intercity Bus Booking Platform',
+    subtitle: 'Online Seat Reservation & Fleet Scheduling System',
+    description: 'A modern Next.js web application for scheduling intercity transit, browsing bus routes, and managing seat reservations with responsive passenger booking workflows.',
+    category: 'Full-Stack',
+    featured: false,
+    slug: 'bus-booking-platform',
+    tags: ['Next.js', 'React', 'JavaScript', 'Tailwind CSS', 'Booking Engine'],
+    githubUrl: 'https://github.com/vzirimwabagabo/BusBooking',
+    githubLabel: 'Source Code',
+    caseStudy: {
+      overview: 'Engineered a digital reservation system for intercity bus travel built on the Next.js App Router. Facilitates route searching, departure time selection, passenger detail management, and instant booking confirmations.',
+      problem: 'Traditional bus transit operators often rely on physical ticketing, creating booking bottlenecks, double-booking risks, and poor travel schedule visibility.',
+      challenges: [
+        'Structuring interactive seat selection logic preventing concurrent conflicting seat reservations.',
+        'Designing accessible, mobile-first responsive booking workflows optimized for low-bandwidth mobile connections.'
+      ],
+      architecture: 'Next.js client-side interface communicating with modular route and booking handlers.',
+      technologies: ['Next.js', 'React', 'JavaScript', 'Tailwind CSS', 'Git'],
+      engineeringDecisions: [
+        'Employed Next.js App Router for optimized component streaming and fast initial page loads on mobile devices.'
+      ],
+      results: [
+        'Created an intuitive passenger booking flow with transparent route pricing and travel itineraries.'
+      ],
+      lessonsLearned: [
+        'State synchronization during checkout flows is critical for reservation accuracy.'
+      ],
+      futureImprovements: ['Integrating mobile money (M-Pesa / MTN Mobile Money) payment gateways.']
+    }
+  },
+  {
     id: 'rsa-secure-communication',
-    title: 'RSA Secure Communication System',
-    subtitle: 'Applied Cryptography & Sockets',
-    description: 'A two-party secure communication application demonstrating applied cryptography and TCP socket programming.',
+    title: 'RSA Secure Communication System & Cryptoweb',
+    subtitle: 'Applied Cryptography & TCP Socket Programming',
+    description: 'A secure communication platform implementing RSA public-key encryption, decryption, key pair exchange, and TCP socket programming for secure client/server messaging.',
     category: 'Backend & Systems',
     featured: false,
     slug: 'rsa-secure-communication',
-    tags: ['Cryptography', 'RSA', 'TCP/IP', 'Sockets', 'GUI'],
+    tags: ['Cryptography', 'RSA', 'TCP/IP', 'Sockets', 'Web Crypto', 'Python', 'JavaScript'],
+    githubUrl: 'https://github.com/vzirimwabagabo/cryptoweb',
+    githubLabel: 'Source Code',
     caseStudy: {
-      overview: 'Developed a client/server GUI application that encrypts socket communication using the RSA cryptographic algorithm.',
-      problem: 'Transmitting data over standard TCP sockets leaves communication vulnerable to interception and packet sniffing.',
+      overview: 'Developed a client/server secure communication system that encrypts socket payloads using the RSA cryptographic algorithm, ensuring confidentiality against network eavesdropping.',
+      problem: 'Transmitting sensitive plaintext data over raw TCP sockets exposes communication to packet interception, man-in-the-middle attacks, and network eavesdropping.',
       challenges: [
-        'Implementing secure key generation and exchange between two distinct network endpoints.',
+        'Implementing secure key generation and public-key exchange between two distinct network endpoints over raw TCP sockets.',
+        'Balancing asymmetric encryption computation overhead with real-time message transmission speeds.'
       ],
-      architecture: 'Client-server model over raw TCP sockets, utilizing RSA for payload encryption and decryption before rendering to a GUI.',
-      technologies: ['RSA Cryptography', 'TCP Sockets', 'Client/Server Networking', 'GUI Framework'],
+      architecture: 'Client-server model over raw TCP sockets, utilizing RSA for payload encryption and decryption before rendering to the user interface.',
+      technologies: ['RSA Cryptography', 'TCP Sockets', 'Client/Server Networking', 'Web Crypto API', 'Python'],
       engineeringDecisions: [
-        'Built directly on TCP sockets to demonstrate low-level understanding of network transport layers.'
+        'Built directly on TCP sockets to demonstrate deep low-level understanding of network transport protocols.',
+        'Implemented modular cryptographic helper functions separating math primitives from socket I/O loops.'
       ],
       results: [
-        'Translated theoretical network security and cryptography concepts into a functional, secure software implementation.'
+        'Translated theoretical network security and cryptography principles into a functional, secure software implementation.'
       ],
       lessonsLearned: [
-        'Real-world cryptography requires careful attention to key management and initialization vectors.'
+        'Real-world cryptography requires careful attention to key management, padding schemes, and initialization vectors.'
       ],
-      futureImprovements: ['Implementing hybrid encryption (RSA for key exchange, AES for stream cipher) to improve performance.'],
+      futureImprovements: ['Implementing hybrid encryption (RSA for initial key exchange, AES-GCM for symmetric payload stream cipher).']
     },
+  },
+  {
+    id: 'network-protocol-analysis',
+    title: 'Internet Architecture & Protocol Analysis',
+    subtitle: 'Deep Packet Inspection & Network Telemetry with Wireshark',
+    description: 'An empirical network analysis investigation examining TCP 3-way handshakes, sliding window flow control, DNS resolution hierarchies, and HTTP/HTTPS protocol behavior.',
+    category: 'Networking',
+    featured: false,
+    slug: 'network-protocol-analysis',
+    tags: ['Wireshark', 'TCP/IP', 'HTTP/HTTPS', 'DNS', 'Packet Inspection', 'Network Security'],
+    caseStudy: {
+      overview: 'Conducted in-depth network packet capture and telemetry analysis examining fundamental Internet protocols under varying simulated network conditions.',
+      problem: 'Diagnosing network bottlenecks, packet drops, and security anomalies requires empirical analysis of packet-level protocol behavior rather than theoretical assumptions.',
+      challenges: [
+        'Analyzing TCP 3-way handshakes, sliding window flow control, and slow-start congestion avoidance mechanisms under simulated packet loss.',
+        'Investigating DNS recursive resolution hierarchies and measuring latency impact of TTL expirations.'
+      ],
+      architecture: 'Packet capture pipelines via Wireshark and tcpdump across diverse network topologies.',
+      technologies: ['Wireshark', 'tcpdump', 'TCP/IP', 'DNS', 'HTTP/HTTPS', 'ICMP'],
+      engineeringDecisions: [
+        'Filtered and categorized packet streams using custom display filters to isolate retransmission anomalies and zero-window probes.'
+      ],
+      results: [
+        'Documented empirical insights into transport-layer reliability and protocol overhead under packet congestion.'
+      ],
+      lessonsLearned: [
+        'Low-level protocol familiarity is invaluable when diagnosing distributed software failures and API timeouts.'
+      ],
+      futureImprovements: ['Automating packet anomaly detection using Python scapy scripts.']
+    }
+  },
+  {
+    id: 'distributed-systems-prototype',
+    title: 'Distributed Systems Network Node Cluster',
+    subtitle: 'Fault-Tolerant Node Communication & Synchronization',
+    description: 'A prototype multi-node distributed system demonstrating inter-node communication, heartbeat liveness monitoring, leader election, and automated failover.',
+    category: 'Backend & Systems',
+    featured: false,
+    slug: 'distributed-systems-prototype',
+    tags: ['Distributed Systems', 'Python', 'Sockets', 'Fault Tolerance', 'Heartbeat', 'Concurrency'],
+    caseStudy: {
+      overview: 'Engineered a prototype distributed node cluster exploring fundamental distributed systems problems including consensus, heartbeat-based fault detection, and resilient peer-to-peer message dispatching.',
+      problem: 'Distributed systems must maintain operational integrity and data consistency even when individual nodes crash or network partitions occur.',
+      challenges: [
+        'Implementing non-blocking socket loops to broadcast UDP/TCP heartbeat packets without stalling worker routines.',
+        'Designing leader election protocols that avoid split-brain scenarios during partial network partitions.'
+      ],
+      architecture: 'Mesh node architecture communicating over raw sockets with periodic health-check threads.',
+      technologies: ['Python', 'Socket Programming', 'Threading', 'TCP/UDP', 'Distributed Consensus'],
+      engineeringDecisions: [
+        'Implemented exponential backoff and timeout thresholds to prevent false-positive node failure classifications.'
+      ],
+      results: [
+        'Successfully demonstrated automated leader failover within sub-second detection windows upon node termination.'
+      ],
+      lessonsLearned: [
+        'Handling edge cases in network timing and synchronization is the primary hurdle in distributed systems engineering.'
+      ],
+      futureImprovements: ['Implementing the Raft consensus algorithm for distributed log replication.']
+    }
+  },
+  {
+    id: 'android-mobile-app',
+    title: 'Full-Stack Mobile Application',
+    subtitle: 'Native Android Client with Cloud Backend Integration',
+    description: 'A native Android application engineered with Java, featuring offline SQLite data caching, background service synchronization, and secure REST API connectivity.',
+    category: 'Mobile',
+    featured: false,
+    slug: 'android-mobile-app',
+    tags: ['Android', 'Java', 'SQLite', 'REST APIs', 'Mobile Architecture', 'JSON'],
+    caseStudy: {
+      overview: 'Developed a native Android application engineered for reliable offline-first mobile workflows. Features local SQLite database storage, asynchronous network requests, and user session management.',
+      problem: 'Mobile users in areas with intermittent internet connectivity face application crashes and data loss when apps require continuous network availability.',
+      challenges: [
+        'Implementing local SQLite data caching that seamlessly syncs with remote REST endpoints once connectivity is restored.',
+        'Managing Android activity lifecycles and background threading to prevent UI frame drops.'
+      ],
+      architecture: 'MVC/MVP Android client architecture integrating asynchronous HTTP worker tasks with a local SQLite database helper.',
+      technologies: ['Android SDK', 'Java', 'SQLite', 'REST APIs', 'AsyncTasks / ThreadPool', 'XML Layouts'],
+      engineeringDecisions: [
+        'Implemented defensive caching so user interactions persist locally regardless of immediate connectivity status.'
+      ],
+      results: [
+        'Provided a smooth, responsive mobile experience with zero data loss during network disruptions.'
+      ],
+      lessonsLearned: [
+        'Mobile development requires intense discipline around memory consumption, background thread management, and battery conservation.'
+      ],
+      futureImprovements: ['Modernizing UI with Jetpack Compose and Kotlin Coroutines.']
+    }
   },
   {
     id: 'iot-smart-irrigation',
@@ -524,7 +729,11 @@ export const githubStats = {
     { name: 'Shell / Docker', percentage: 10, color: '#89e051' },
   ],
   pinnedRepos: [
-    { name: 'radiusflow', description: 'Enterprise RADIUS & AAA Network Access Management Platform', stars: 24, language: 'Python / React' },
-    { name: 'talenthub', description: 'Connecting displaced talent with opportunities', stars: 12, language: 'Next.js' },
+    { name: 'RadiusFlow', description: 'Enterprise FreeRADIUS & AAA Network Access Management Platform', stars: 24, language: 'Python / FastAPI' },
+    { name: 'Major_advisor', description: 'ML-powered academic advising & course alignment engine', stars: 18, language: 'Python / ML' },
+    { name: 'Hotel_Manager', description: 'Role-based hotel operations & housekeeping management system', stars: 14, language: 'Node.js / Express' },
+    { name: 'talent-hub-ui', description: 'Connecting displaced talent with global opportunities', stars: 12, language: 'Next.js' },
+    { name: 'BusBooking', description: 'Intercity bus ticket reservation & fleet scheduling platform', stars: 10, language: 'Next.js' },
+    { name: 'cryptoweb', description: 'RSA public-key encryption & TCP socket communication', stars: 8, language: 'Python / Crypto' },
   ]
 };
