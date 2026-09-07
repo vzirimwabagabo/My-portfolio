@@ -12,7 +12,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://valentinzirimwabagabo.valentinz.me'),
+  metadataBase: new URL('https://valentinz.me'),
   title: {
     default: 'Valentin Zirimwabagabo | Software Engineer & Data Science Professional',
     template: '%s | Valentin Zirimwabagabo',
@@ -56,17 +56,17 @@ export const metadata: Metadata = {
     'University of Tokyo data science',
     'Matsuo-Iwasawa Laboratory',
   ],
-  authors: [{ name: 'Valentin Zirimwabagabo', url: 'https://valentinzirimwabagabo.valentinz.me' }],
+  authors: [{ name: 'Valentin Zirimwabagabo', url: 'https://valentinz.me' }],
   creator: 'Valentin Zirimwabagabo',
   publisher: 'Valentin Zirimwabagabo',
   alternates: {
-    canonical: 'https://valentinzirimwabagabo.valentinz.me',
+    canonical: '/',
   },
   openGraph: {
     title: 'Valentin Zirimwabagabo | Software Engineer & Data Science Professional',
     description:
       'Building robust software, secure networks, and intelligent systems. Software Engineer & Data Science Professional based in Nairobi, Kenya. USIU-Africa graduate | Mastercard Foundation Scholar | University of Tokyo Data Science.',
-    url: 'https://valentinzirimwabagabo.valentinz.me',
+    url: 'https://valentinz.me',
     siteName: 'Valentin Zirimwabagabo — Portfolio',
     locale: 'en_US',
     type: 'website',
@@ -101,7 +101,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Valentin Zirimwabagabo',
-    url: 'https://valentinzirimwabagabo.valentinz.me',
+    url: 'https://valentinz.me',
     jobTitle: 'Software Engineer & Data Science Professional',
     description:
       'Software Engineer, Data Science Professional and Network Infrastructure Engineer based in Nairobi, Kenya. USIU-Africa graduate and Mastercard Foundation Scholar.',
