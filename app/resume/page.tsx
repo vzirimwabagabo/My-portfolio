@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Libre_Baskerville } from 'next/font/google';
-import { personalInfo, skillCategories, projects, timelineItems, certifications } from '@/lib/data';
+import { personalInfo, skillCategories, projects, timelineItems, certifications, languages, referees } from '@/lib/data';
 import { ArrowLeft, Printer, CheckCircle2, Mail, Phone, ExternalLink } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/Icons';
 
@@ -233,7 +233,7 @@ export default function ResumePage() {
           <section className="space-y-1">
             <h2 className="cv-h2">Professional Summary</h2>
             <p className="cv-body">
-              Multidisciplinary Software Engineer and Data Science professional with strong practical grounding in network infrastructure and systems engineering. BSc in Applied Computer Technology graduate from USIU-Africa (Mastercard Foundation Scholar) with advanced Data Science credentialing from The University of Tokyo (Matsuo-Iwasawa Laboratory). Experienced in architecting decoupled AAA network management platforms (RadiusFlow / FreeRADIUS + FastAPI), full-stack web platforms (React, Next.js, Node.js, PostgreSQL, MongoDB), and applied machine learning pipelines (Python, scikit-learn). Dedicated to engineering secure, observable, and intelligent systems that solve measurable real-world problems.
+              IT and network infrastructure professional with a B.S. in Applied Computer Science and Technology (USIU-Africa) and hands-on experience in network infrastructure, RADIUS/AAA authentication, systems troubleshooting, and full-stack web development. Translates technical skill into community impact: leads the Mahama Tailoring Empowerment Project (15 refugee youth in tailoring and entrepreneurship training) and founded Nexus Digital Hub to expand digital-literacy access for refugee youth in Mahama Refugee Camp. Builds across the stack, from infrastructure to product — recent work includes RadiusFlow, a FreeRADIUS/PostgreSQL/FastAPI network access management platform, and TalentHub/RefuTalent, a capstone platform connecting displaced professionals with global opportunities.
             </p>
           </section>
 
@@ -245,14 +245,17 @@ export default function ResumePage() {
             <div className="space-y-0.5 cv-avoid-break">
               <div className="flex justify-between items-baseline">
                 <h3 className="cv-h3">{personalInfo.degree}</h3>
-                <span className="cv-mono">2021 — 2025</span>
+                <span className="cv-mono">2021 — Sept. 2026</span>
               </div>
               <p className="cv-subtitle">{personalInfo.university} · Nairobi, Kenya</p>
               <p className="cv-small mt-0.5">
-                <strong>Honors / Award:</strong> Mastercard Foundation Scholar — Awarded full competitive international scholarship recognizing academic excellence, resilience, and leadership.
+                <strong>Academic Standing:</strong> Cumulative GPA: 3.35 / 4.0 · <strong>Dean&apos;s List:</strong> Spring 2023, Summer 2024, Fall 2024
+              </p>
+              <p className="cv-small mt-0.5">
+                <strong>Honors / Award:</strong> Mastercard Foundation Scholar (Cohort 5) — Full competitive international scholarship recognizing academic excellence, leadership, and resilience.
               </p>
               <p className="cv-small text-gray-700">
-                <strong>Relevant Areas:</strong> Applied Machine Learning, Artificial Intelligence, Database Systems, Computer Networks & Telecommunications, Network Security & Cryptography, Distributed Systems, Cloud Computing, Systems Analysis & Design.
+                <strong>Relevant Areas:</strong> Computer Networks & Telecommunications, Network Security & Cryptography, Distributed Systems, Systems Analysis & Design, Database Systems, Applied Machine Learning, Artificial Intelligence, Forensic IT.
               </p>
             </div>
 
@@ -348,6 +351,37 @@ export default function ResumePage() {
                   <div>
                     <p className="cv-body font-bold leading-tight">{c.title}</p>
                     <p className="cv-small text-gray-600">{c.issuer} · {c.issueDate}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── LANGUAGES ─────────────────────────────── */}
+          <section className="space-y-1.5 cv-avoid-break">
+            <h2 className="cv-h2">Languages</h2>
+            <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs">
+              {languages.map((lang) => (
+                <div key={lang.name} className="flex items-center gap-1.5">
+                  <span className="font-bold text-black">{lang.name}:</span>
+                  <span className="text-gray-700">{lang.proficiency}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── REFEREES ─────────────────────────────── */}
+          <section className="space-y-2 cv-avoid-break">
+            <h2 className="cv-h2">Referees</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {referees.map((ref) => (
+                <div key={ref.name} className="space-y-0.5">
+                  <h3 className="cv-h3">{ref.name}</h3>
+                  <p className="cv-subtitle text-xs">{ref.title}</p>
+                  <p className="cv-small text-gray-600">{ref.organization}</p>
+                  <div className="pt-0.5 space-y-0.5 text-xs cv-mono">
+                    <p>Email: <a href={`mailto:${ref.email}`} className="text-blue-700 hover:underline">{ref.email}</a></p>
+                    <p>Tel: {ref.phone}</p>
                   </div>
                 </div>
               ))}

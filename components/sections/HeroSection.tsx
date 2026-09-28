@@ -26,19 +26,19 @@ export function HeroSection() {
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[color:var(--bg-card)]/85 border border-[color:var(--border-color)] backdrop-blur-md text-xs text-[color:var(--text-secondary)] font-medium shadow-inner">
               <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-              <span>Available for AI & Systems Engineering Roles</span>
+              <span>Available for IT, Network & Software Engineering Roles</span>
             </div>
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[color:var(--text-primary)] leading-[1.15]">
-              I design <span className="gradient-text-blue">intelligent software systems</span> that bridge AI, networking, and backend engineering.
+              Architecting <span className="gradient-text-blue">network infrastructure</span>, secure software, and community-driven technology.
             </h1>
 
             {/* Short Introduction */}
             <p className="text-base sm:text-lg text-[color:var(--text-secondary)] max-w-2xl font-normal leading-relaxed">
               {personalInfo.shortBio}{' '}
               <span className="text-[color:var(--text-muted)]">
-                Applied Computer Technology graduate from USIU-Africa & Mastercard Foundation Scholar. Building secure, resilient real-world systems.
+                B.S. in Applied Computer Science and Technology (USIU-Africa) & Mastercard Foundation Scholar. Hands-on experience in RADIUS/AAA authentication, network engineering, full-stack platforms, and youth empowerment initiatives.
               </span>
             </p>
 
@@ -77,7 +77,7 @@ export function HeroSection() {
                 Core Engineering Stack
               </span>
               <div className="flex flex-wrap gap-2 text-xs font-mono text-[color:var(--text-secondary)]">
-                {['Python', 'FastAPI', 'FreeRADIUS', 'TypeScript', 'Next.js', 'PyTorch', 'Docker', 'PostgreSQL'].map(
+                {['Python', 'FastAPI', 'FreeRADIUS', 'TypeScript', 'Next.js', 'Flask', 'Docker', 'PostgreSQL'].map(
                   (tech) => (
                     <span
                       key={tech}
@@ -121,7 +121,7 @@ export function HeroSection() {
                   <div className="min-w-0">
                     <h2 className="text-lg font-bold text-[color:var(--text-primary)]">{personalInfo.name}</h2>
                     <p className="text-xs text-cyan-400 font-medium">{personalInfo.status}</p>
-                    <p className="text-xs text-[color:var(--text-muted)] mt-1">Nairobi, Kenya • From Burundi</p>
+                    <p className="text-xs text-[color:var(--text-muted)] mt-1">{personalInfo.location} • From {personalInfo.origin}</p>
                   </div>
                 </div>
 

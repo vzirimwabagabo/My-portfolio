@@ -95,14 +95,14 @@ export interface PersonalInfo {
 
 export const personalInfo: PersonalInfo = {
   name: 'Valentin Zirimwabagabo',
-  title: 'Software Engineer & Data Science Professional | Network Infrastructure',
-  shortBio: 'Building robust software, secure networks, and intelligent systems.',
-  fullBio: `Networking taught me how systems communicate. Software engineering taught me how to build those systems. Today, I am leveraging data science and machine learning to make those systems intelligent. As a multidisciplinary technology professional, I build practical, scalable solutions at the intersection of infrastructure, software, and data.`,
-  status: 'Available for AI & Systems Engineering Roles',
-  degree: 'Bachelor of Science in Applied Computer Technology',
+  title: 'IT & Network Infrastructure Professional | Full-Stack Developer | Data Science',
+  shortBio: 'IT and network infrastructure professional building secure, resilient real-world systems.',
+  fullBio: `IT and network infrastructure professional with a B.S. in Applied Computer Science and Technology (USIU-Africa) and hands-on experience in network infrastructure, RADIUS/AAA authentication, systems troubleshooting, and full-stack web development. Translates technical skill into community impact: leads the Mahama Tailoring Empowerment Project and founded Nexus Digital Hub to expand digital-literacy access for refugee youth in Mahama Refugee Camp. Builds across the stack — recent work includes RadiusFlow, a FreeRADIUS/PostgreSQL/FastAPI network access management platform, and TalentHub/RefuTalent, a capstone talent platform connecting displaced professionals with global opportunities.`,
+  status: 'Available for IT, Network & Software Engineering Roles',
+  degree: 'Bachelor of Science in Applied Computer Science and Technology',
   university: 'United States International University-Africa (USIU-Africa)',
-  scholarship: 'Mastercard Foundation Scholar',
-  location: 'Nairobi, Kenya',
+  scholarship: 'Mastercard Foundation Scholar — Cohort 5',
+  location: 'Kigali, Rwanda',
   origin: 'Burundi',
   email: 'vzirimwabagabo0@gmail.com',
   phone: '+250786216601',
@@ -111,12 +111,12 @@ export const personalInfo: PersonalInfo = {
   linkedin: 'https://www.linkedin.com/in/valentin-zirimwabagabo/',
   resumeUrl: '/resume',
   targetRoles: [
+    'IT / Network Infrastructure Engineer',
+    'Software Engineer',
+    'Backend / Full-Stack Developer',
     'AI/ML Intern',
     'Junior Machine Learning Engineer',
     'Data Analyst / Junior Data Scientist',
-    'Software Engineer',
-    'Backend / Full-Stack Developer',
-    'Network Engineer',
     'Technical Researcher'
   ],
 };
@@ -638,47 +638,124 @@ export const projects: Project[] = [
 export const timelineItems: TimelineItem[] = [
   {
     id: 'edu-usiu',
-    period: '2021 — 2025',
-    title: 'Bachelor of Science in Applied Computer Technology',
+    period: '2021 — Sept. 2026',
+    title: 'Bachelor of Science in Applied Computer Science and Technology',
     organization: 'United States International University-Africa (USIU-Africa)',
     location: 'Nairobi, Kenya',
     type: 'Education',
     description: 'Developed a strong foundation in software engineering, database systems, cryptography, artificial intelligence, and applied machine learning.',
     achievements: [
-      'Mastercard Foundation Scholar',
-      'Coursework included Computer Networks, Cryptography & Network Security, Distributed Systems, Systems Analysis & Design.'
+      'Mastercard Foundation Scholar — Cohort 5 (full competitive international scholarship recognizing academic excellence, resilience, and leadership)',
+      'Cumulative GPA: 3.35 / 4.0',
+      'Dean\'s List: Spring 2023, Summer 2024, Fall 2024',
+      'Coursework included Computer Networks, Cryptography & Network Security, Distributed Systems, Systems Analysis & Design, AI-Based Course Recommendation System, Forensic IT.'
     ],
     skills: ['Software Engineering', 'Network Security', 'Machine Learning', 'Databases', 'Cloud Computing'],
   },
   {
     id: 'work-zestra',
-    period: '2024',
-    title: 'Technical Intern (Software & Network Operations)',
+    period: 'Jan. 2026 – Jul. 2026',
+    title: 'IT / Network Infrastructure Intern',
     organization: 'Zestra Capital Limited',
-    location: 'Kenya',
+    location: 'Nairobi, Kenya',
     type: 'Experience',
-    description: 'Provided technical support across network operations and software development for an internet service provider.',
+    description: 'Provided technical support across network operations and software development for an internet service provider and logistics technology company.',
     achievements: [
-      'Configured and maintained network infrastructure to ensure reliable internet service delivery.',
-      'Diagnosed routing and connectivity issues utilizing network troubleshooting protocols.',
-      'Contributed to the React-based Zestra Delivery Administration Dashboard, engineering core operational views (Orders, Deliveries, Riders, Agents, RBAC) integrated with the delivery REST backend.',
-      'Contributed to web application and software development initiatives to support internal operations.'
+      'Configured and maintained network infrastructure (access points, routing, cabling) to ensure reliable internet service delivery across multiple client sites.',
+      'Diagnosed and resolved routing and connectivity issues using network troubleshooting protocols (ping, traceroute, Wireshark captures).',
+      'Engineered core operational views (Orders, Deliveries, Riders, Agents, RBAC, Profiles, Rider Logs) in the React-based Zestra Delivery Administration Dashboard, integrated with a live REST delivery backend and Google Maps links.',
+      'Implemented filtering, pagination, and role-based access control (RBAC) across the dashboard for multi-tier agent and rider management.',
+      'Collaborated with backend engineers on API integration and contributed to internal software development initiatives to support operational efficiency.'
     ],
-    skills: ['React', 'JavaScript', 'REST APIs', 'RBAC', 'Network Infrastructure', 'Troubleshooting'],
+    skills: ['React', 'JavaScript', 'REST APIs', 'RBAC', 'Network Infrastructure', 'Troubleshooting', 'Google Maps API'],
+  },
+  {
+    id: 'work-result-consultancy',
+    period: 'Jan. 2025 – Mar. 2025',
+    title: 'Research & Data Analysis Intern',
+    organization: 'The Result Consultancy Company Ltd',
+    location: 'Kigali, Rwanda',
+    type: 'Experience',
+    description: 'Supported applied research and data analysis projects for a management and strategy consultancy serving public and private sector clients in Rwanda.',
+    achievements: [
+      'Collected, cleaned, and analyzed structured and unstructured datasets to support client research deliverables.',
+      'Produced data summaries, visualizations, and written reports to communicate findings to non-technical stakeholders.',
+      'Assisted in designing data collection instruments and validating data quality throughout the research lifecycle.'
+    ],
+    skills: ['Data Analysis', 'Research Methods', 'Data Visualization', 'Report Writing', 'Python', 'Excel'],
   },
   {
     id: 'leadership-mtep',
-    period: '2022 — 2024',
+    period: 'Dec. 2025 – Present',
     title: 'Initiative Leader / Organizer',
     organization: 'Mahama Tailoring Empowerment Project (M-TEP)',
+    location: 'Mahama Refugee Camp, Rwanda',
+    type: 'Leadership',
+    description: 'Leading a youth skills development program designed to provide practical livelihood and entrepreneurship skills to refugee youth in Mahama Refugee Camp.',
+    achievements: [
+      'Managing project planning, budgeting (~$3,000), and monitoring to ensure resource efficiency and measurable social impact.',
+      'Actively training 15 refugee youth in tailoring, sewing, and basic entrepreneurship principles.',
+      'Coordinating with community leaders and partner organizations to sustain program operations and expand reach.'
+    ],
+    skills: ['Leadership', 'Project Planning', 'Budget Management', 'Community Engagement', 'Entrepreneurship'],
+  },
+  {
+    id: 'leadership-nexus',
+    period: '2024 — Present',
+    title: 'Founder',
+    organization: 'Nexus Digital Hub',
+    location: 'Mahama Refugee Camp, Rwanda',
+    type: 'Leadership',
+    description: 'Founded Nexus Digital Hub to expand digital-literacy access and technology education for refugee youth in Mahama Refugee Camp.',
+    achievements: [
+      'Designed and launched a structured digital literacy curriculum covering computer basics, internet safety, and introductory coding.',
+      'Mobilized volunteer instructors and community partners to deliver training sessions at the camp.',
+      'Created pathways for youth to access online learning resources and develop employable technology skills.'
+    ],
+    skills: ['Digital Literacy', 'Curriculum Design', 'Community Organizing', 'Technology Education'],
+  },
+  {
+    id: 'leadership-tlt',
+    period: '2023 — 2024',
+    title: 'Mentor',
+    organization: 'TLT Dream Builders — Mathare Mixed Secondary School',
+    location: 'Nairobi, Kenya',
+    type: 'Leadership',
+    description: 'Served as a youth mentor at Mathare Mixed Secondary School under the TLT Dream Builders initiative, supporting students with academic guidance and career exploration.',
+    achievements: [
+      'Conducted mentorship sessions on academic goal-setting, career pathways in technology, and personal development.',
+      'Supported students facing socioeconomic challenges with motivation and practical advice for accessing higher education.'
+    ],
+    skills: ['Mentorship', 'Youth Development', 'Public Speaking', 'Career Guidance'],
+  },
+  {
+    id: 'leadership-turashoboye',
+    period: '2022 — Present',
+    title: 'Co-Founder',
+    organization: 'Turashoboye Feeds Ltd',
     location: 'Rwanda',
     type: 'Leadership',
-    description: 'Coordinated a youth skills development program designed to provide practical livelihood skills to the community.',
+    description: 'Co-founded a small animal and poultry feed production business serving rural farmers in Rwanda, with a growing e-commerce component for online orders.',
     achievements: [
-      'Managed project planning, budgeting, and monitoring to ensure resource efficiency and measurable social impact.',
-      'Delivered over 480+ hours of training and vocational development.'
+      'Established supply chain partnerships for raw material sourcing and distribution to local and regional markets.',
+      'Developed an e-commerce channel to enable online ordering and expand customer reach beyond the local area.',
+      'Managed business operations, sales, and customer relationships alongside co-founders.'
     ],
-    skills: ['Leadership', 'Project Planning', 'Budget Management', 'Community Engagement'],
+    skills: ['Entrepreneurship', 'Business Development', 'E-Commerce', 'Operations Management'],
+  },
+  {
+    id: 'leadership-gmi',
+    period: '2023',
+    title: 'Mentee — Global Mentorship Initiative (GMI)',
+    organization: 'Mastercard Foundation',
+    location: 'Remote',
+    type: 'Leadership',
+    description: 'Selected as a mentee in the Mastercard Foundation Global Mentorship Initiative (GMI), receiving structured professional development and career coaching from senior industry professionals.',
+    achievements: [
+      'Engaged in structured one-on-one mentorship sessions focused on career planning, leadership, and professional growth.',
+      'Applied mentorship insights to personal and academic development as a Mastercard Foundation Scholar.'
+    ],
+    skills: ['Professional Development', 'Leadership', 'Career Planning', 'Mentorship'],
   },
 ];
 
@@ -700,7 +777,52 @@ export const certifications: Certification[] = [
     category: 'Leadership',
     skills: ['Leadership', 'Mentorship', 'Professional Development'],
     badgeColor: 'from-amber-500 to-orange-600',
-  }
+  },
+  {
+    id: 'ubuntu-lab-leadership',
+    title: 'Transformative Leadership Certificate',
+    issuer: 'Ubuntu.Lab Institute',
+    issueDate: '2023',
+    category: 'Leadership',
+    skills: ['Transformative Leadership', 'Community Impact', 'Social Innovation'],
+    badgeColor: 'from-emerald-500 to-teal-600',
+  },
+  {
+    id: 'usiu-career-fair-volunteer',
+    title: 'Volunteer Certificate — Career Fair',
+    issuer: 'USIU-Africa',
+    issueDate: '2024',
+    category: 'Leadership',
+    skills: ['Event Coordination', 'Volunteering', 'Professional Networking'],
+    badgeColor: 'from-slate-500 to-slate-700',
+  },
+  {
+    id: 'mcf-python',
+    title: 'Intermediate Python',
+    issuer: 'Mastercard Foundation Professional Development',
+    issueDate: '2023',
+    category: 'Python',
+    skills: ['Python', 'Intermediate Programming', 'Data Structures'],
+    badgeColor: 'from-yellow-500 to-amber-600',
+  },
+  {
+    id: 'mcf-problem-solving',
+    title: 'Problem Solving',
+    issuer: 'Mastercard Foundation Professional Development',
+    issueDate: '2023',
+    category: 'Leadership',
+    skills: ['Analytical Thinking', 'Problem Solving', 'Decision Making'],
+    badgeColor: 'from-purple-500 to-violet-600',
+  },
+  {
+    id: 'mcf-keeping-online',
+    title: 'Keeping Yourself Online',
+    issuer: 'Mastercard Foundation Professional Development',
+    issueDate: '2023',
+    category: 'Networking',
+    skills: ['Digital Safety', 'Online Security', 'Internet Literacy'],
+    badgeColor: 'from-cyan-500 to-blue-600',
+  },
 ];
 
 export const blogPosts: BlogPost[] = [
@@ -737,3 +859,39 @@ export const githubStats = {
     { name: 'cryptoweb', description: 'RSA public-key encryption & TCP socket communication', stars: 8, language: 'Python / Crypto' },
   ]
 };
+
+export interface Language {
+  name: string;
+  proficiency: string;
+}
+
+export interface Referee {
+  name: string;
+  title: string;
+  organization: string;
+  email: string;
+  phone: string;
+}
+
+export const languages: Language[] = [
+  { name: 'English', proficiency: 'Fluent' },
+  { name: 'Kinyarwanda', proficiency: 'Fluent / Native' },
+  { name: 'Kirundi', proficiency: 'Fluent / Native' },
+];
+
+export const referees: Referee[] = [
+  {
+    name: 'Julian Ndombi',
+    title: 'Program Coordinator, Mastercard Foundation Scholars Program',
+    organization: 'United States International University-Africa (USIU-Africa)',
+    email: 'mcfsp-enquiries@usiu.ac.ke',
+    phone: '+254 730 116 218',
+  },
+  {
+    name: 'Dr. Stanley Githinji, PhD',
+    title: 'Lecturer – Forensic IT & Information Systems',
+    organization: 'United States International University-Africa (USIU-Africa)',
+    email: 'smgithinji@usiu.ac.ke',
+    phone: '+254 721 250 516',
+  },
+];
