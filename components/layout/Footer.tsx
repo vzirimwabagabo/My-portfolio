@@ -35,8 +35,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-xs text-[color:var(--text-secondary)] max-w-md leading-relaxed">
-              AI Engineer (Aspiring) | Network Infrastructure Engineer | Full-Stack Software Developer.
-              BS in Applied Computer Technology graduate from USIU-Africa. Mastercard Foundation Scholar.
+              IT & Network Infrastructure Professional | Full-Stack Software Developer | Data Science.
+              B.S. in Applied Computer Science and Technology (USIU-Africa). Mastercard Foundation Scholar.
             </p>
             <div className="flex items-center gap-2 text-xs text-[color:var(--text-muted)]">
               <ShieldCheck className="w-4 h-4 text-[color:var(--accent-cyan)]" />
@@ -106,7 +106,7 @@ export function Footer() {
               </a>
             </div>
             <p className="text-[11px] text-[color:var(--text-muted)]">
-              Based in Nairobi, Kenya • Originally from Burundi
+              Based in {personalInfo.location} • Originally from {personalInfo.origin}
             </p>
           </div>
         </div>

@@ -89,6 +89,8 @@ export interface PersonalInfo {
   github: string;
   linkedin: string;
   twitter?: string;
+  website: string;
+  websiteDisplay: string;
   resumeUrl: string;
   targetRoles: string[];
 }
@@ -109,6 +111,8 @@ export const personalInfo: PersonalInfo = {
   phoneDisplay: '+250 786 216 601',
   github: 'https://github.com/vzirimwabagabo',
   linkedin: 'https://www.linkedin.com/in/valentin-zirimwabagabo/',
+  website: 'https://valentinzirimwabagabo.valentinz.me',
+  websiteDisplay: 'valentinzirimwabagabo.valentinz.me',
   resumeUrl: '/resume',
   targetRoles: [
     'IT / Network Infrastructure Engineer',

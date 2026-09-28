@@ -221,8 +221,8 @@ export default function ResumePage() {
               <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="cv-link cv-mono flex items-center gap-1">
                 <LinkedinIcon className="w-3 h-3 inline-block" /> LinkedIn
               </a>
-              <a href="https://valentinz.me" target="_blank" rel="noopener noreferrer" className="cv-link cv-mono flex items-center gap-1">
-                <ExternalLink className="w-3 h-3 inline-block" /> Portfolio
+              <a href={personalInfo.website} target="_blank" rel="noopener noreferrer" className="cv-link cv-mono flex items-center gap-1">
+                <ExternalLink className="w-3 h-3 inline-block" /> {personalInfo.websiteDisplay}
               </a>
             </div>
           </header>
@@ -393,7 +393,7 @@ export default function ResumePage() {
           {/* Footer */}
           <footer className="text-center pt-1">
             <p className="cv-mono text-[10px] text-gray-500">
-              Valentin Zirimwabagabo · https://valentinz.me · References & project repositories available on request
+              Valentin Zirimwabagabo · {personalInfo.websiteDisplay} · References & project repositories available on request
             </p>
           </footer>
 
