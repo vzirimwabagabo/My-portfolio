@@ -140,6 +140,17 @@ export function FeaturedProjectsSection() {
                     </a>
                   )}
 
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 rounded-lg bg-emerald-900/60 border border-emerald-700/60 text-emerald-400 hover:text-emerald-200 transition-colors"
+                      title="View Live Site"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
                   {project.hasSpecialPage && (
                     <Link
                       href={project.specialPagePath!}
@@ -312,17 +323,30 @@ export function FeaturedProjectsSection() {
                   <div />
                 )}
 
-                {activeModalProject.githubUrl && (
-                  <a
-                    href={activeModalProject.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl flex items-center gap-2"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                    <span>{activeModalProject.githubLabel || 'View Repository'}</span>
-                  </a>
-                )}
+                <div className="flex items-center gap-3">
+                  {activeModalProject.liveUrl && (
+                    <a
+                      href={activeModalProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 text-xs font-semibold text-emerald-300 hover:text-white bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-700/60 rounded-xl flex items-center gap-2"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      <span>Live Site</span>
+                    </a>
+                  )}
+                  {activeModalProject.githubUrl && (
+                    <a
+                      href={activeModalProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl flex items-center gap-2"
+                    >
+                      <GithubIcon className="w-4 h-4" />
+                      <span>{activeModalProject.githubLabel || 'View Repository'}</span>
+                    </a>
+                  )}
+                </div>
               </div>
 
             </motion.div>
