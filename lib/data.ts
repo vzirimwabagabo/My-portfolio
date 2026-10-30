@@ -801,7 +801,7 @@ export const timelineItems: TimelineItem[] = [
     achievements: [
       'Mastercard Foundation Scholar — Cohort 5 (full competitive international scholarship recognizing academic excellence, resilience, and leadership)',
       'Cumulative GPA: 3.368 / 4.0',
-      'Dean\'s List: Spring 2023, Summer 2024, Fall 2024',
+      'Dean\'s List: Spring 2023, Fall 2024, Summer 2025',
       'Coursework included Computer Networks, Cryptography & Network Security, Distributed Systems, Systems Analysis & Design, AI-Based Course Recommendation System, Forensic IT.'
     ],
     skills: ['Software Engineering', 'Network Security', 'Machine Learning', 'Databases', 'Cloud Computing'],
