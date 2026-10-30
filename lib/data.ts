@@ -1024,7 +1024,7 @@ export interface Referee {
   title: string;
   organization: string;
   email: string;
-  phone: string;
+  phone?: string;
 }
 
 export const languages: Language[] = [
@@ -1034,6 +1034,12 @@ export const languages: Language[] = [
 ];
 
 export const referees: Referee[] = [
+  {
+    name: 'Dr. Leah Mutanu Mwaura, PhD',
+    title: 'Head of Department, Computing & Informatics | Assistant Professor of Software Engineering',
+    organization: 'United States International University-Africa (USIU-Africa)',
+    email: 'lmutanu@usiu.ac.ke',
+  },
   {
     name: 'Julian Ndombi',
     title: 'Program Coordinator, Mastercard Foundation Scholars Program',

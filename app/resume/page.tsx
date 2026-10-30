@@ -381,7 +381,7 @@ export default function ResumePage() {
                   <p className="cv-small text-gray-600">{ref.organization}</p>
                   <div className="pt-0.5 space-y-0.5 text-xs cv-mono">
                     <p>Email: <a href={`mailto:${ref.email}`} className="text-blue-700 hover:underline">{ref.email}</a></p>
-                    <p>Tel: {ref.phone}</p>
+                    {ref.phone && <p>Tel: {ref.phone}</p>}
                   </div>
                 </div>
               ))}
