@@ -800,7 +800,7 @@ export const timelineItems: TimelineItem[] = [
     description: 'Developed a strong foundation in software engineering, database systems, cryptography, artificial intelligence, and applied machine learning.',
     achievements: [
       'Mastercard Foundation Scholar — Cohort 5 (full competitive international scholarship recognizing academic excellence, resilience, and leadership)',
-      'Cumulative GPA: 3.364 / 4.0',
+      'Cumulative GPA: 3.368 / 4.0',
       'Dean\'s List: Spring 2023, Summer 2024, Fall 2024',
       'Coursework included Computer Networks, Cryptography & Network Security, Distributed Systems, Systems Analysis & Design, AI-Based Course Recommendation System, Forensic IT.'
     ],
