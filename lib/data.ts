@@ -698,7 +698,7 @@ export const projects: Project[] = [
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Prisma 6', 'PostgreSQL', 'Tailwind CSS v4', 'S3 / Object Storage', 'Turbopack'],
     githubUrl: 'https://github.com/vzirimwabagabo/mycofert-bdi',
     githubLabel: 'Source Code',
-    liveUrl: 'https://mycofert.bi',
+    liveUrl: 'https://mycofert-bdi.vercel.app',
     caseStudy: {
       overview: 'MYCOFERT Burundi is a production marketing platform for a real Bujumbura-based agribusiness producing oyster mushrooms, substrate grow kits, and organic bio-fertilizer. The platform serves dual audiences — French-speaking local customers and English-speaking international buyers and NGO partners — through a fully bilingual content architecture. Beyond the public-facing product showcase, the platform includes a self-hosted CMS allowing the business owner to publish blog articles, update product listings, and upload media through a protected admin panel, without requiring a third-party CMS subscription.',
       problem: 'MYCOFERT had no digital presence capable of reaching both local Francophone buyers and international markets simultaneously. Existing template-based website builders could not support bilingual content management, custom product structures, or a self-managed media library within the client\'s budget. The business needed a production-grade platform that the owner could maintain independently without technical knowledge.',
@@ -719,7 +719,7 @@ export const projects: Project[] = [
         'Adopted Tailwind CSS v4 early to align with the Next.js 16 + React 19 ecosystem direction, accepting the migration cost of the new @import-based config system.',
       ],
       results: [
-        'Delivered a production bilingual marketing platform live at https://mycofert.bi, serving MYCOFERT\'s French and English-speaking markets simultaneously.',
+        'Delivered a production bilingual marketing platform live at https://mycofert-bdi.vercel.app, serving MYCOFERT\'s French and English-speaking markets simultaneously.',
         'Enabled the business owner to independently manage product listings, blog content, and media uploads through the self-hosted admin CMS without any technical assistance.',
         'Achieved strong Core Web Vitals through Next.js App Router Server Components, static generation for public pages, and edge middleware for locale routing.',
         'Eliminated third-party CMS subscription costs by building a purpose-specific, self-hosted content management system within the platform.',
@@ -748,6 +748,7 @@ export const projects: Project[] = [
     tags: ['React 19', 'TypeScript', 'Vite', 'Supabase', 'PostgreSQL', 'Row-Level Security', 'AI CV Screening', 'Tailwind CSS v4', 'Edge Functions'],
     githubUrl: 'https://github.com/vzirimwabagabo/Mini-ATS',
     githubLabel: 'Source Code',
+    liveUrl: 'https://mini-ats-zffe.vercel.app',
     caseStudy: {
       overview: 'Mini ATS is a compact but production-capable Applicant Tracking System built to replace unwieldy spreadsheet-based hiring pipelines for small recruitment teams and HR departments. The system provides a visual 6-stage Kanban board (Applied → Screening → Interview → Assessment → Offer → Hired/Rejected), an AI-powered CV analysis engine that scores candidates against job requirements, a customer masquerade/delegation mode allowing admin staff to operate on behalf of client accounts, and a Supabase RLS-backed multi-tenant data layer ensuring each client\'s candidate pool is fully isolated.',
       problem: 'Small-to-mid-size hiring teams often track candidates across spreadsheets, email threads, and manual notes — creating data inconsistencies, missed follow-up deadlines, and no objective framework for comparing applicants. Existing commercial ATS platforms are over-engineered and prohibitively expensive for small operations, while spreadsheets offer no pipeline visibility, no collaboration, and no candidate scoring mechanism.',
